@@ -3,6 +3,9 @@ package com.aim.meteors.services;
 import java.io.File;
 import java.util.List;
 
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSStaticCredentialsProvider;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.Bucket;
@@ -31,6 +34,12 @@ public class AwsS3Service
     this.s3client = s3client;
   }
 
+  public AwsS3Service(AWSCredentials credentials) {
+    this(AmazonS3ClientBuilder.standard()
+        .withCredentials(new AWSStaticCredentialsProvider(credentials))
+        .withRegion(Regions.US_WEST_2).build());
+  }
+  
   // ======================================================================
   // Methods
   // ======================================================================
@@ -61,13 +70,8 @@ public class AwsS3Service
   // Object Access
   // ---------------------------
   /**
-   * Uploads {@link file} to the bucket named {@link bucketName}, registered under {@link key},
-   * returning a {@link PutObjectResult}.
-   * 
-   * @param bucketName
-   * @param key
-   * @param file
-   * @return
+   * Uploads {@link file} to the bucket named {@link bucketName}, registered 
+   * under {@link key}, returning a {@link PutObjectResult}.
    */
   public PutObjectResult putObject(String bucketName, String key, File file) {
     return s3client.putObject(bucketName, key, file);

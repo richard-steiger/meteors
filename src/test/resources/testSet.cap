@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<capsule version="3">
-  <schema>
-    <type id="listOfString" address="_java.util.List{Elt:string}"/>
-  </schema>
-  <listOfString id="3"/>
-</capsule>

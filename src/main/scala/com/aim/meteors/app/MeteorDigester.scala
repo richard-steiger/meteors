@@ -31,14 +31,16 @@ object MeteorDigester extends App {
   // ======================================================================
   /*----- configuration state -----*/
   var bucketName = "majorly-meteoric"
-  var AwsAccesskey = "AKIAUVW5JFREDK6DELNN"
-  var AwsSecretkey = "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"
+  var AwsAccesskey = ""
+  var AwsSecretkey = ""
 
   /*----- working state -----*/
   var awsService = new AwsS3Service()
   var mapper = new ObjectMapper()
 
-  def main() 
+  def main(args: String[]): Unit = {
+
+  }
   println("Hey, Sky!");
 
 

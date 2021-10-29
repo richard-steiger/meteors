@@ -1,1 +1,4 @@
-U:\aws\meteors\src\main\java\com\aim\meteors\GetS3Objects.java
+C:\university\meteors\src\main\java\com\aim\meteors\models\MeteorFall.java
+C:\university\meteors\src\main\java\com\aim\meteors\models\Geolocation.java
+C:\university\meteors\src\main\java\com\aim\meteors\app\MeteorDigester.java
+C:\university\meteors\src\main\java\com\aim\meteors\services\AwsS3Service.java

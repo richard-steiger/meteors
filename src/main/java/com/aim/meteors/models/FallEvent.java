@@ -2,7 +2,8 @@ package com.aim.meteors.models;
 
 import java.util.Date;
 
-public class MeteorFall
+//@JsonDeserialize(using = FallEventDeserializer.class)
+public class FallEvent
 {
   public String name;
   public int id;
@@ -15,7 +16,7 @@ public class MeteorFall
   public float reclong;
   public Geolocation geolocation;
 
-  public MeteorFall() {}
+  public FallEvent() {}
   
 }
 
